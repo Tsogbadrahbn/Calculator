@@ -1,4 +1,0 @@
-' A new Program!
-TextWindow.WriteLine("What is your name?")
-name = TextWindow.Read()
-TextWindow.WriteLine("Hello " + name + "!")
