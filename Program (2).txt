@@ -1,0 +1,118 @@
+GraphicsWindow.Title = "Calculator"
+Controls.SetTextBoxText(txt, "")
+
+back = Controls.AddButton("Backspace", 90, 100)
+Controls.SetSize(back, 120, 30)
+clear = Controls.AddButton("C", 220, 100)
+Controls.SetSize(clear, 120, 30)
+zero = Controls.AddButton("0", 90, 260)
+Controls.SetSize(zero, 30, 30)
+one = Controls.AddButton("1", 90, 220)
+Controls.SetSize(one, 30, 30)
+two = Controls.AddButton("2", 140, 220)
+Controls.SetSize(two, 30, 30)
+three = Controls.AddButton("3", 190, 220)
+Controls.SetSize(three, 30, 30)
+four = Controls.AddButton("4", 90, 180)
+Controls.SetSize(four, 30, 30)
+five = Controls.AddButton("5", 140, 180)
+Controls.SetSize(five, 30, 30)
+six = Controls.AddButton("6", 190, 180)
+Controls.SetSize(six, 30, 30)
+seven = Controls.AddButton("7", 90, 140)
+Controls.SetSize(seven, 30, 30)
+eight = Controls.AddButton("8", 140, 140)
+Controls.SetSize(eight, 30, 30)
+nine = Controls.AddButton("9", 190, 140)
+Controls.SetSize(nine, 30, 30)
+modul = Controls.AddButton("+/-", 140, 260)
+Controls.SetSize(modul, 30, 30)
+dot = Controls.AddButton(".", 190, 260)
+Controls.SetSize(dot, 30, 30)
+div = Controls.AddButton("/", 240, 140)
+Controls.SetSize(div, 30, 30)
+multi = Controls.AddButton("*", 240, 180)
+Controls.SetSize(multi, 30, 30)
+substract = Controls.AddButton("-", 240, 220)
+Controls.SetSize(substract, 30, 30)
+add = Controls.AddButton("+", 240, 260)
+Controls.SetSize(add, 30, 30)
+sqrt = Controls.AddButton("sqrt", 290, 140)
+Controls.SetSize(sqrt, 50, 30)
+porp = Controls.AddButton("1/x", 290, 180)
+Controls.SetSize(porp, 50, 30)
+equal = Controls.AddButton("=", 290, 220)
+Controls.SetSize(equal, 50, 70)
+txt = Controls.AddTextBox(90, 60)
+Controls.SetSize(txt, 240, 20)
+Controls.ButtonClicked = inputnumber
+sub inputnumber
+    if controls.lastclickedbutton = one then
+        Controls.SetTextBoxText(txt, text.Append(Controls.GetTextBoxText(txt), "1"))
+    EndIf
+    if controls.lastclickedbutton = two then
+        Controls.SetTextBoxText(txt, text.Append(Controls.GetTextBoxText(txt), "2"))
+    EndIf
+    if controls.lastclickedbutton = three then
+        Controls.SetTextBoxText(txt, text.Append(Controls.GetTextBoxText(txt), "3"))
+    EndIf
+    if controls.lastclickedbutton = four then
+        Controls.SetTextBoxText(txt, text.Append(Controls.GetTextBoxText(txt), "4"))
+    EndIf
+    if controls.lastclickedbutton = five then
+        Controls.SetTextBoxText(txt, text.Append(Controls.GetTextBoxText(txt), "5"))
+    EndIf
+    if controls.lastclickedbutton = six then
+        Controls.SetTextBoxText(txt, text.Append(Controls.GetTextBoxText(txt), "6"))
+    EndIf
+    if controls.lastclickedbutton =  seven then
+        Controls.SetTextBoxText(txt, text.Append(Controls.GetTextBoxText(txt), "7"))
+    EndIf
+    if controls.lastclickedbutton = eight then
+        Controls.SetTextBoxText(txt, text.Append(Controls.GetTextBoxText(txt), "8"))
+    EndIf
+    if controls.lastclickedbutton = nine then
+        Controls.SetTextBoxText(txt, text.Append(Controls.GetTextBoxText(txt), "9"))
+    EndIf
+    if controls.lastclickedbutton = zero then
+        Controls.SetTextBoxText(txt, text.Append(Controls.GetTextBoxText(txt), "0"))
+    EndIf
+
+    'temdeg
+    if controls.lastclickedbutton = add then
+        number1 = Controls.GetTextBoxText(txt)
+        Controls.SetTextBoxText(txt, "")
+        temdeg = "+"
+    EndIf
+    if controls.lastclickedbutton = substract then
+        number1 = Controls.GetTextBoxText(txt)
+        Controls.SetTextBoxText(txt, "")
+        temdeg = "-"
+        if controls.lastclickedbutton = multi then
+        number1 = Controls.GetTextBoxText(txt)
+        Controls.SetTextBoxText(txt, "")
+        temdeg = "*"
+    EndIf
+    if controls.lastclickedbutton = div then
+        number1 = Controls.GetTextBoxText(txt)
+        Controls.SetTextBoxText(txt, "")
+        temdeg = "/"
+    EndIf
+    if controls.lastclickedbutton = equal then
+        if temdeg = "+" then
+        hariu = number1 + controls.GetTextBoxText(txt)
+        
+        elseif temdeg = "-" then
+        hariu = number1 - controls.GetTextBoxText(txt)
+        ElseIf temdeg = "*" Then
+        hariu = number1 * controls.GetTextBoxText(txt)
+        elseif temdeg= "/" then
+        hariu = number1 / controls.GetTextBoxText(txt)
+        EndIf
+        Controls.SetTextBoxText(txt, hariu)
+    EndIf
+    'clear , backspace , sqrt , 1/x
+EndIf
+EndSub
+
+    
