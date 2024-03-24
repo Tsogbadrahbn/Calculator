@@ -1,0 +1,26 @@
+'  1. Olon ungutei bolgoh
+'  2. Zuraasaa zuv zurdag bolgoh
+GraphicsWindow.BackgroundColor = "Black"
+GraphicsWindow.PenColor = "White"
+GraphicsWindow.MouseDown = OnMouseDown
+GraphicsWindow.MouseMove = OnMouseMove
+GraphicsWindow.KeyDown = OnKeyDown
+
+Sub OnMouseDown
+    firstX = Mouse.MouseX
+    firstY = Mouse.MouseY
+EndSub
+
+Sub OnMouseMove
+    If Mouse.IsLeftButtonDown Then
+        ' GraphicsWindow.DrawLine(Mouse.MouseX, Mouse.MouseY, Mouse.MouseX+1, Mouse.MouseY+1)
+    EndIf
+    firstX = Mouse.MouseX
+    firstY = Mouse.MouseY
+EndSub
+
+Sub OnKeyDown
+    If GraphicsWindow.LastKey = "R" Then
+        GraphicsWindow.PenColor = "Red"
+    EndIf
+EndSub
