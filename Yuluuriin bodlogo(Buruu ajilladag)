@@ -1,0 +1,80 @@
+' Hoyr argaar turshij uzehed ajilladag bolgoh (5 litriin savaar hutgahguigeer hojih uyd ajillah code)
+' esvel uur litriin savuudaar toglogdah uyd 
+five = 0
+three = 0
+fivemax = 5
+threemax = 3
+
+While input <> 0
+    TextWindow.WriteLine(Text.Append("5-n sav ", five))
+    TextWindow.WriteLine(Text.Append("3-n sav ", three))
+    TextWindow.WriteLine("")
+    TextWindow.WriteLine("0. Buuj ugluu")
+    TextWindow.WriteLine("")
+    TextWindow.WriteLine("1. 5-r hutgah")
+    TextWindow.WriteLine("2. 3-r hutgah")
+    TextWindow.WriteLine("3. 5-s 3")
+    TextWindow.WriteLine("4. 3-s 5")
+    TextWindow.WriteLine("5. 5 asgah")
+    TextWindow.WriteLine("6. 3 asgah")
+    input = TextWindow.Read()
+    If input = 1 Then
+        five = 5
+        TextWindow.WriteLine("Үйлдэл хийгдсэн")
+    ElseIf input = 2 Then
+        three = 3
+        TextWindow.WriteLine("Үйлдэл хийгдсэн")
+    ElseIf input = 3 Then ' 5-s 3 ruu
+        hoosonZai  = 3 - three
+        If five > 3 Then
+            if hoosonZai = 1 then
+                three = three + 1
+                five = five - 1
+            ElseIf hoosonZai = 2 Then
+                three = three + 2
+                five = five - 2
+            ElseIf hoosonZai = 3 Then
+                three = 3
+                five = five - 3
+            Else
+                TextWindow.WriteLine("Sav duuren baina")     
+            EndIf
+        Else
+                three = three + five
+                five = five - 3
+                If five < 0 Then
+                    five = 0
+                EndIf
+        EndIf
+        TextWindow.WriteLine("Үйлдэл хийгдсэн")
+      ElseIf input = 3 Then ' 3-s 5 ruu
+            If five < 5 Then
+                hoosonZai  = 5 - five
+            if hoosonZai = 1 then
+                three = three - 1
+                five = five + 1
+            ElseIf hoosonZai = 2 Then
+                three = three - 2
+                five = five + 2
+            ElseIf hoosonZai = 3 Then
+                three = 0
+                five = five + 3
+            Else
+                TextWindow.WriteLine("Sav duuren baina")     
+            EndIf
+        EndIf
+        TextWindow.WriteLine("Үйлдэл хийгдсэн")
+ 
+    ElseIf input = 5 Then
+        five = 0
+        TextWindow.WriteLine("Үйлдэл хийгдсэн")
+    ElseIf input = 6 Then
+        three = 0
+        TextWindow.WriteLine("Үйлдэл хийгдсэн")
+    EndIf
+    Program.Delay(3000)
+    TextWindow.Clear()
+            if five = 4 then
+            TextWindow.WriteLine("Congra!")
+            EndIf
+EndWhile
