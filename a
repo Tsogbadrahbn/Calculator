@@ -1,0 +1,15 @@
+start:
+TextWindow.Clear()
+round2 = 10
+round = 0
+number2 = Math.GetRandomNumber(100)
+TextWindow.Title = "guess my number"
+TextWindow.ForegroundColor = "red"
+TextWindow.WriteLine("guess my number")
+TextWindow.ForegroundColor = "gray"
+TextWindow.WriteLine("")
+TextWindow.WriteLine("my number is less than 100")
+TextWindow.WriteLine("you have" + round2 + "rounds")
+begin:
+TextWindow.WriteLine("whats my number?")
+number = TextWindow.ReadNumber()
